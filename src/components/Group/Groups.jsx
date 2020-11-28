@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 
 import { GET_GROUPS } from '../../graphql/queries';
-import { renderErrorMessage } from '../../utils/helper';
+import { renderErrorMessage, renderLoading } from '../../utils/helper';
 import { Col, Card, Row } from 'react-bootstrap';
 
 const GroupsComponent = (props) => {
@@ -32,6 +32,7 @@ const GroupsComponent = (props) => {
       <h6>Available groups</h6>
       {/* <hr /> */}
       <Row>
+        {renderLoading(loading)}
         {renderErrorMessage(error)}
         {renderGroups()}
       </Row>

@@ -11,7 +11,7 @@ const SignInScreen = (props) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [login, { loading, data, error }] = useLazyQuery(LOGIN);
+  const [login, { data, error }] = useLazyQuery(LOGIN);
 
   useEffect(() => {
     const { setIsLoggedIn } = props;
@@ -20,7 +20,7 @@ const SignInScreen = (props) => {
       setToken(data.login.token);
       setCurrentUser(email);
     }
-  }, [data])
+  }, [])
 
   const onEmailChange = (event) => {
     setEmail(event.target.value);
@@ -69,6 +69,7 @@ const SignInScreen = (props) => {
 
       </Col>
       <Col>
+        {renderErrorMessage(error)}
         {renderLoginForm()}
       </Col>
     </Row>

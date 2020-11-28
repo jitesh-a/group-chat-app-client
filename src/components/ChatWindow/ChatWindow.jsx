@@ -2,7 +2,7 @@ import { useQuery, useMutation, useSubscription } from '@apollo/client';
 
 import { GET_MESSAGES, SEND_MESSAGE, MESSAGES_SUBSCRIPTION } from '../../graphql/queries';
 import { renderErrorMessage, getCurrentUser, renderLoading } from '../../utils/helper';
-import { Col, Card, Row, Form, Button } from 'react-bootstrap';
+import { Col, Row, Form, Button } from 'react-bootstrap';
 import MessageComponent from '../Message/Message';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -22,7 +22,7 @@ const ChatWindowComponent = (props) => {
   const onSubscriptionData = ({ subscriptionData }) => {
     // if (!messageSubscription?.loading) {
     const newMessages = [...messages, subscriptionData.data.messageAdded];
-    console.log(newMessages);
+    // console.log(newMessages);
     setMessages(newMessages);
     // }
   }

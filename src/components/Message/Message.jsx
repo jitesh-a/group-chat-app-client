@@ -1,7 +1,7 @@
 import { Col, Row } from 'react-bootstrap';
 
 const MessageComponent = (props) => {
-  const { _id, message, email, createdAt } = props;
+  const { message, email, createdAt } = props;
 
   const renderMessageHeader = () => {
     const messageDate = new Date(new Number(createdAt)).toDateString();
