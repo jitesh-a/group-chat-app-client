@@ -4,6 +4,7 @@ const MessageComponent = (props) => {
   const { message, email, createdAt } = props;
 
   const renderMessageHeader = () => {
+     // eslint-disable-line 
     const messageDate = new Date(new Number(createdAt)).toDateString();
     return (
       <h6>On {messageDate} - {email}  said:</h6>

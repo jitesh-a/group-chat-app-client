@@ -27,6 +27,7 @@ const ChatWindowComponent = (props) => {
     // }
   }
 
+  // eslint-disable-line 
   const messageSubscription = useSubscription(
     MESSAGES_SUBSCRIPTION, {
     onSubscriptionData: onSubscriptionData
