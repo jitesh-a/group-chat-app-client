@@ -9,7 +9,7 @@ const httpLink = createHttpLink({
 });
 
 const wsLink = new WebSocketLink({
-  uri: `ws://group-chat-app-server.herokuapp.com/graphql`,
+  uri: `wss://group-chat-app-server.herokuapp.com/graphql`,
   options: {
     reconnect: true
   }
