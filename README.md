@@ -1,7 +1,7 @@
 
-# Chatbook server
+# Chatbook client
 
-A realtime group chat application server using Graphql and ES6 with JWT authentication.
+A realtime group chat application client built with Apollo Client.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
