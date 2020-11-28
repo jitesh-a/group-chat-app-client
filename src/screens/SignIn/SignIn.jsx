@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useLazyQuery } from '@apollo/client';
 
 import { LOGIN } from '../../graphql/queries';
-import { setToken, renderErrorMessage, setCurrentUser } from '../../utils/helper';
+import { setToken, renderErrorMessage, setCurrentUser, renderLoading } from '../../utils/helper';
 
 import './SignIn.css';
 
@@ -11,7 +11,7 @@ const SignInScreen = (props) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [login, { data, error }] = useLazyQuery(LOGIN);
+  const [login, { loading, data, error }] = useLazyQuery(LOGIN);
 
   useEffect(() => {
     const { setIsLoggedIn } = props;
@@ -55,8 +55,8 @@ const SignInScreen = (props) => {
             <Form.Label>Password</Form.Label>
             <Form.Control value={password} type="password" placeholder="Password" onChange={onPasswordChange} />
           </Form.Group>
-          <Button variant="primary" type="button" onClick={onClick}>
-            Submit
+          <Button variant="primary" type="button" onClick={onClick} disabled={loading}>
+            {renderLoading(loading)} Submit
         </Button>
         </Form>
       </>

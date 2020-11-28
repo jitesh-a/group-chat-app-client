@@ -76,7 +76,7 @@ const ChatWindowComponent = (props) => {
               <Form.Control as="textarea" rows={3} value={message} onChange={e => setMessage(e.target.value)} />
             </Form.Group>
             <Button variant="primary" type="button" onClick={onClick} disabled={isSendButtonDisabled()}>
-              Send
+              {renderLoading(isSendButtonDisabled)} Send
             </Button>
           </Form>
         </Col>
