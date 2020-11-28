@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+
+# Chatbook server
+
+A realtime group chat application server using Graphql and ES6 with JWT authentication.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

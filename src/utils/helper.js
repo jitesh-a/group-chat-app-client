@@ -29,7 +29,7 @@ const renderErrorMessage = (error) => {
 
 const renderLoading = (loading) => {
   if (loading) {
-    return (<Spinner animation="border" variant="primary" size="lg"/>)
+    return (<Spinner animation="border" variant="secondary" size="lg"/>)
   }
 }
 export {

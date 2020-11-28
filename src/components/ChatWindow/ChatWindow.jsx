@@ -66,6 +66,10 @@ const ChatWindowComponent = (props) => {
     return (message.length === 0 || newMessage?.loading);
   }
 
+  const renderButtonText = () => {
+    return (message.length > 0 && newMessage?.loading) ? renderLoading(true) : 'Send'
+  }
+
   const renderChatBox = () => {
     return (
       <Row>
@@ -76,8 +80,9 @@ const ChatWindowComponent = (props) => {
               <Form.Control as="textarea" rows={3} value={message} onChange={e => setMessage(e.target.value)} />
             </Form.Group>
             <Button variant="primary" type="button" onClick={onClick} disabled={isSendButtonDisabled()}>
-              {renderLoading(isSendButtonDisabled)} Send
+              {renderButtonText()}
             </Button>
+            {/* {renderLoading(isSendButtonDisabled())} */}
           </Form>
         </Col>
       </Row>
