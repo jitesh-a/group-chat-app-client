@@ -20,7 +20,7 @@ const SignInScreen = (props) => {
       setToken(data.login.token);
       setCurrentUser(email);
     }
-  }, [])
+  })
 
   const onEmailChange = (event) => {
     setEmail(event.target.value);
