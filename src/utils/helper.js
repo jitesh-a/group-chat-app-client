@@ -1,19 +1,19 @@
 import { Alert, Spinner } from 'react-bootstrap';
 
 const setToken = (token) => {
-  localStorage.setItem('token', token);
+  sessionStorage.setItem('token', token);
 }
 
 const setCurrentUser = (email) => {
-  localStorage.setItem('email', email);
+  sessionStorage.setItem('email', email);
 }
 
 const getToken = () => {
-  return localStorage.getItem('token');
+  return sessionStorage.getItem('token');
 }
 
 const getCurrentUser = () => {
-  return localStorage.getItem('email');
+  return sessionStorage.getItem('email');
 }
 
 
